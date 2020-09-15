@@ -7,7 +7,7 @@
 import pymongo
 import csv
 
-strCon = "mongodb+srv://admin:Bothell2018@cluster0-yogcb.azure.mongodb.net/test?retryWrites=true&w=majority"
+strCon = "mongodb+srv://admin:***@cluster0-yogcb.azure.mongodb.net/test?retryWrites=true&w=majority"
 
 objCon = pymongo.MongoClient(strCon)
 db = objCon['ClinicReports']

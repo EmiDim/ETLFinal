@@ -7,8 +7,8 @@ from datetime import datetime, date, time
 def getDWConnectionString():
     server = 'is-root01.ischool.uw.edu\\BI'
     database = 'DWClinicReportDataEDimikj'
-    username = 'BICert'
-    password = 'BICert'
+    username = 'UN**'
+    password = 'PASS**'
     driver = "{ODBC Driver 17 for SQL Server}"
     strConn = 'DRIVER=' + driver + ';SERVER=' + server + ';DATABASE=' + database + ';' \
               'UID=' + username + ';PWD=' + password + ";"
@@ -22,7 +22,7 @@ def getDWConnectionString():
 
 
 def getMongoConnectionStr():
-    strConn = "mongodb+srv://admin:Bothell2018@cluster0-yogcb.azure.mongodb.net/test?retryWrites=true&w=majority"
+    strConn = "mongodb+srv://admin:***@cluster0-yogcb.azure.mongodb.net/test?retryWrites=true&w=majority"
     try:
         objCon = pymongo.MongoClient(strConn)
         return strConn
