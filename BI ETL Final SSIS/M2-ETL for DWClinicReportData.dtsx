@@ -1,0 +1,2829 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/4/2020 4:37:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BME09T7"
+  DTS:CreatorName="DESKTOP-BME09T7\emili"
+  DTS:DTSID="{50455830-9A97-4C45-89A4-F00565E51FC0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="M2-ETL for DWClinicReportData"
+  DTS:PackageType="5"
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{DD097D23-A4A4-4457-A1E9-824FD1D94C93}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[5-Create DWClinicReportData.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CEF72A6D-2FC6-4551-9FA7-B4A1E6EB97D7}"
+      DTS:ObjectName="5-Create DWClinicReportData.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\ETL_Final\ETLFinal_EmilijaDimikj\SQLScripts\5-Create DWClinicReportData.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[6-CreateViews DW.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{20813959-0D88-4032-98C6-5FC34BAA0D2C}"
+      DTS:ObjectName="6-CreateViews DW.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\ETL_Final\ETLFinal_EmilijaDimikj\SQLScripts\6-CreateViews DW.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[7-Create LoadingProcedures DW.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{404A04D0-EE1A-4B99-94C3-AA315659DC4A}"
+      DTS:ObjectName="7-Create LoadingProcedures DW.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\ETL_Final\ETLFinal_EmilijaDimikj\SQLScripts\7-Create LoadingProcedures DW.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[8-DimTab Dummy Rows.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BEE8EC16-793D-4425-814B-736D62670920}"
+      DTS:ObjectName="8-DimTab Dummy Rows.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\ETL_Final\ETLFinal_EmilijaDimikj\SQLScripts\8-DimTab Dummy Rows.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{18170FFE-BEFE-41AB-9431-F0063F43828C}"
+      DTS:ObjectName="continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=continuumsql.westus2.cloudapp.azure.com;User ID=BICert;Initial Catalog=DoctorsSchedules;Persist Security Info=True;Application Name=SSIS-ETL for DWClinicReportData-{18170FFE-BEFE-41AB-9431-F0063F43828C}continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAprvW5zaxMkCFRZ+rPC7DXAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADeWHlvKx8i4BzOborBjeSgpW+VQXmPfp5jJbVoh4v+lQAAAAAOgAAAAAIAACAAAAD4ZR213GtWMewYS29uK9tR9GeCDaaY7/i1ecBMKGJVaxAAAAAdfUbgKNldaVQWChBQbwFiQAAAALpHPNSvoiZVYoitIs6wVWIK2trrPjkXF7LfgHx3rDgCB1aXg7dET0giih2Cy5EFCldpWEFvrrS7NMwPXeac7ao</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+      DTS:ObjectName="is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=is-root01.ischool.uw.edu\BI;User ID=BICert;Initial Catalog=DWClinicReportDataEDimikj;Persist Security Info=True;Application Name=SSIS-ETL for DWClinicReportData-{25F260FE-E375-4C95-8716-571A22AC78EF}is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BI;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAprvW5zaxMkCFRZ+rPC7DXAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACRH6ShWYLqBvaQWY+uoBVv92ufVDtYUFcxIxaWTCEvxAAAAAAOgAAAAAIAACAAAABWi4Lcm3Ky+jvimmZ9TKqSMGGquXljy67t/w/jjiPthBAAAACVbZ8hslIiS+jTnDdGgR3kQAAAANZ5Prxfcve6319+OiHj/pIsfjAKTvhjMGAc2tEU+RcCg9rTujkk9rZZNvN8FcFrCoynWAOAA4J7ykNh32sq/sA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.master.BICert]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+      DTS:ObjectName="is-root01.ischool.uw.edu\BI.master.BICert">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=is-root01.ischool.uw.edu\BI;User ID=BICert;Initial Catalog=master;Persist Security Info=True;Application Name=&quot;SSIS-ETL for DWClinicReportData-{76ABE2DB-D127-488D-A308-9482C7DB113E}is-root01.ischool.uw.edu\BI.master.BICert&quot;;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAprvW5zaxMkCFRZ+rPC7DXAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADfNDaBKezSfZjIQlcPQKMT3Nf4Ef35iwYq0ccnj8ouRwAAAAAOgAAAAAIAACAAAADr4BIqGcJMiPxUk+4/axuk1HijKrDRcC7t/ocSpXMr3xAAAAB78Gx9SDPlDkI24E/B9ND+QAAAAJczvOHZpvOtYuMI0ErwFTuOHYAS53e25Ez3dRVqiUoAO6s7xts9tuS0DSuGrmoly2dfAOx5xf07kdKEaNhQ/iE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D905C16B-5C43-4A3F-A682-38B79515F4CB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varDatabaseCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52C83ED3-C571-46EE-A617-697AE8F5982F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varRS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check Remote Server"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E7B0E41B-D78E-4F14-A924-F08D2C9EBF15}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check Remote Server">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Check Remote Server\Check DW DataBase"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{65D3D7E8-AD35-466C-829D-1B2CA0FAE6D3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check DW DataBase"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+              SQLTask:SqlStatementSource="SELECT COUNT(*) FROM sys.databases where name like 'DWClinicReportDataEDimikj'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::varDatabaseCount" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Check Remote Server\Check DW DataBase Again"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{26ebf2f9-4874-45ec-ba59-02b8208a8b0e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check DW DataBase Again"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+              SQLTask:SqlStatementSource="SELECT COUNT(*) FROM sys.databases where name like 'DWClinicReportDataEDimikj'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::varDatabaseCount" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Check Remote Server\Create DW"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FAF7010F-6B05-4BFD-A3BD-D4E07650E32E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create DW"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="5-Create DWClinicReportData.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Check Remote Server\Create DW ETL Views"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e425e341-1343-4233-b56d-8dcb56f4d731}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create DW ETL Views"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="6-CreateViews DW.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Check Remote Server\Create DW Fill Procedures"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B128C03F-0C4B-4BFB-9AAB-52CEEA6CCC75}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create DW Fill Procedures"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76ABE2DB-D127-488D-A308-9482C7DB113E}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="7-Create LoadingProcedures DW.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Check Remote Server.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{82E34544-2B9E-47BA-BCEB-B6F13197F5E5}"
+          DTS:From="Package\Check Remote Server\Create DW Fill Procedures"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Check Remote Server\Check DW DataBase Again" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Check Remote Server.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{39B35264-E0D9-4D06-AD63-D8B154C71C2A}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::varDatabaseCount]==0"
+          DTS:From="Package\Check Remote Server\Check DW DataBase"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Check Remote Server\Create DW" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Check Remote Server.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{E0CD4E83-520D-4031-B5D3-A4286373547E}"
+          DTS:From="Package\Check Remote Server\Create DW"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Check Remote Server\Create DW ETL Views" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Check Remote Server.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{F67286F1-0D08-4688-B132-7952A5234C48}"
+          DTS:From="Package\Check Remote Server\Create DW ETL Views"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Check Remote Server\Create DW Fill Procedures" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fill Dim Tables ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DA16088C-349B-483A-A36E-20A3CDAC9481}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fill Dim Tables ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimClinics Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CD78BB9B-442E-4440-A821-F3FC29B041EF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimClinics Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="[dbo].[pETLFillDimClinics]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimDates Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e01d1634-3cdc-4506-bed0-355e2ea0717f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDates Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="dbo.pETLFillDimDates" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimDoctors Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{40b4d207-370b-4c76-8988-83f5c3bc8378}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimDoctors Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="dbo.pETLFillDimDoctors" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimPatients Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5bbcf14d-5132-41fb-868b-7ccfd8234cba}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimPatients Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="dbo.pETLFillDimPatients" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimProcedures Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{b0721e3a-6b80-4cf5-ade1-86d55d73b10a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimProcedures Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="dbo.pETLFillDimProcedures" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\DimShifts Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{dbdc4d62-40ef-4317-8caa-44efde0302cf}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimShifts Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="dbo.pETLFillDimShifts" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Dim Tables ETL\Insert Dummy Rows"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{cfe7a8e4-2bb7-44e3-a2d7-ca0d4914145b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert Dummy Rows"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="8-DimTab Dummy Rows.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7363E452-0656-44BA-A54E-8D87B17EFBF8}"
+          DTS:From="Package\Fill Dim Tables ETL\DimClinics Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fill Dim Tables ETL\DimDoctors Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{83250536-B9FB-46F6-A9A5-A211A9C245CB}"
+          DTS:From="Package\Fill Dim Tables ETL\DimDoctors Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Fill Dim Tables ETL\DimShifts Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{F3A2BCDF-802B-433C-871B-973BB21A80F4}"
+          DTS:From="Package\Fill Dim Tables ETL\DimShifts Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Fill Dim Tables ETL\DimPatients Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{ACC74969-05BC-4C11-BE53-955A643CE00A}"
+          DTS:From="Package\Fill Dim Tables ETL\DimPatients Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Fill Dim Tables ETL\DimProcedures Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{FAD0F789-50C2-4167-95F7-D19674023BA7}"
+          DTS:From="Package\Fill Dim Tables ETL\DimProcedures Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fill Dim Tables ETL\DimDates Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{A5ED5574-FE4E-483D-913E-F5573280EDA5}"
+          DTS:From="Package\Fill Dim Tables ETL\Insert Dummy Rows"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Fill Dim Tables ETL\DimClinics Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fill Fact Tables ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1EBA5081-9F33-4E25-8AA6-6CF3CD95C7AF}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fill Fact Tables ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fill Fact Tables ETL\FactDoctorShifts Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4a3cd7c5-755a-4cb1-a877-42d170d2a64c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactDoctorShifts Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="[dbo].[pETLFillFactDoctorShifts]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fill Fact Tables ETL\FactVisits Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f89db8a9-e133-4753-8ce3-802491fb3de8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactVisits Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="[dbo].[pETLFillFactVisits]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@RC"
+                SQLTask:DtsVariableName="User::varRS"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fill Fact Tables ETL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{84D25366-CFEF-4481-9DD9-DF4D0E495617}"
+          DTS:From="Package\Fill Fact Tables ETL\FactVisits Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fill Fact Tables ETL\FactDoctorShifts Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PreLoad ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{02D5D382-D315-4D7F-ACA1-B059A6E55667}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PreLoad ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PreLoad ETL\Fill DimClinicsStaging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B02A2847-76E4-42B3-86B7-32951E29B653}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimClinicsStaging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="Clinics Source"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Clinics"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicID]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicID]"
+                          name="ClinicID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicName]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicName]"
+                          name="ClinicName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[Address]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Address]"
+                          name="Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                          length="5"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                          name="Zip"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicID]"
+                          dataType="i4"
+                          name="ClinicID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ClinicName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          name="Zip" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ClinicID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ClinicID]"
+                          name="ClinicID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ClinicName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ClinicName]"
+                          name="ClinicName" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[Address]"
+                          name="Address" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                          name="Zip" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="DimClinicsStaging Destination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimClinicsStaging"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[ClinicID]"
+                          cachedDataType="i4"
+                          cachedName="ClinicID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicID]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[ClinicName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ClinicName"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicName]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[ClinicName]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Address]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].Columns[Zip]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Zip"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Zip]"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output].Columns[Zip]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicID]"
+                          dataType="i4"
+                          name="ClinicID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ClinicName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          name="Zip" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PreLoad ETL\Fill DimClinicsStaging.Paths[ADO NET Source Output]"
+                  endId="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source.Outputs[ADO NET Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PreLoad ETL\Fill DimDoctorsStaging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8f71b5c4-da73-4c71-9383-6b036949759b}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimDoctorsStaging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="DimDoctorsStaging Destination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimDoctorsStaging"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[DoctorID]"
+                          cachedDataType="i4"
+                          cachedName="DoctorID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorID]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[DoctorID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[FirstName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="FirstName"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstName]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[FirstName]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[LastName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="LastName"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastName]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[LastName]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[EmailAddress]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="EmailAddress"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[EmailAddress]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[EmailAddress]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Address]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].Columns[Zip]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Zip"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Zip]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Zip]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorID]"
+                          dataType="i4"
+                          name="DoctorID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="100"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="100"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[EmailAddress]"
+                          dataType="wstr"
+                          length="100"
+                          name="EmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          name="Zip" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="Doctors Source"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Doctors"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[DoctorID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorID]"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[DoctorID]"
+                          name="DoctorID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[FirstName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[FirstName]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[FirstName]"
+                          name="FirstName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[LastName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[LastName]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[LastName]"
+                          name="LastName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[EmailAddress]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[EmailAddress]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[EmailAddress]"
+                          name="EmailAddress"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[Address]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Address]"
+                          name="Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                          length="5"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                          name="Zip"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorID]"
+                          dataType="i4"
+                          name="DoctorID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="100"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="100"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[EmailAddress]"
+                          dataType="wstr"
+                          length="100"
+                          name="EmailAddress" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          name="Zip" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[DoctorID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[DoctorID]"
+                          name="DoctorID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[FirstName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[FirstName]"
+                          name="FirstName" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[LastName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[LastName]"
+                          name="LastName" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[EmailAddress]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[EmailAddress]"
+                          name="EmailAddress" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[Address]"
+                          name="Address" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                          name="Zip" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PreLoad ETL\Fill DimDoctorsStaging.Paths[ADO NET Source Output]"
+                  endId="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source.Outputs[ADO NET Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PreLoad ETL\Fill DimShiftsStaging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1A411F8F-8CCB-471D-A8A5-FA612009D0B5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimShiftsStaging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="DimShiftsStaging Destination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimShiftsStaging"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ShiftID]"
+                          cachedDataType="i4"
+                          cachedName="ShiftID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ShiftStart]"
+                          cachedDataType="dbTime2"
+                          cachedName="ShiftStart"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftStart]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftStart]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ShiftEnd]"
+                          cachedDataType="dbTime2"
+                          cachedName="ShiftEnd"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftEnd]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftEnd]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftID]"
+                          dataType="i4"
+                          name="ShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftStart]"
+                          dataType="dbTime2"
+                          name="ShiftStart" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftEnd]"
+                          dataType="dbTime2"
+                          name="ShiftEnd" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="Shifts Source"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Shifts"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]"
+                          name="ShiftID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftStart]"
+                          dataType="dbTime2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftStart]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftStart]"
+                          name="ShiftStart"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftEnd]"
+                          dataType="dbTime2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftEnd]"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].Columns[ShiftEnd]"
+                          name="ShiftEnd"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftID]"
+                          dataType="i4"
+                          name="ShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftStart]"
+                          dataType="dbTime2"
+                          name="ShiftStart" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftEnd]"
+                          dataType="dbTime2"
+                          name="ShiftEnd" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftID]"
+                          name="ShiftID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftStart]"
+                          dataType="dbTime2"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftStart]"
+                          name="ShiftStart" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftEnd]"
+                          dataType="dbTime2"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftEnd]"
+                          name="ShiftEnd" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PreLoad ETL\Fill DimShiftsStaging.Paths[ADO NET Source Output]"
+                  endId="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source.Outputs[ADO NET Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{ac482df2-dd1a-453b-a95d-31220bb81191}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill FactDoctorShiftsStaging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="DoctorShifts Source"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DoctorShifts"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[continuumsql.westus2.cloudapp.azure.com.DoctorsSchedules.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorsShiftID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorsShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorsShiftID]"
+                          name="DoctorsShiftID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftDate]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftDate]"
+                          name="ShiftDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ClinicID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ClinicID]"
+                          name="ClinicID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]"
+                          name="ShiftID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorID]"
+                          name="DoctorID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorsShiftID]"
+                          dataType="i4"
+                          name="DoctorsShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftDate]"
+                          dataType="dbTimeStamp"
+                          name="ShiftDate" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ClinicID]"
+                          dataType="i4"
+                          name="ClinicID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[ShiftID]"
+                          dataType="i4"
+                          name="ShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].ExternalColumns[DoctorID]"
+                          dataType="i4"
+                          name="DoctorID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[DoctorsShiftID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[DoctorsShiftID]"
+                          name="DoctorsShiftID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftDate]"
+                          name="ShiftDate" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ClinicID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ClinicID]"
+                          name="ClinicID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ShiftID]"
+                          name="ShiftID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[DoctorID]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[DoctorID]"
+                          name="DoctorID" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="FactDoctorShiftsStaging Destination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."FactDoctorShiftsStaging"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      connectionManagerRefId="Package.ConnectionManagers[is-root01.ischool.uw.edu\BI.DWClinicReportDataEDimikj.BICert]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[DoctorsShiftID]"
+                          cachedDataType="i4"
+                          cachedName="DoctorsShiftID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorsShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorsShiftID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ShiftDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ShiftDate"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftDate]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftDate]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ClinicID]"
+                          cachedDataType="i4"
+                          cachedName="ClinicID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ClinicID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[ShiftID]"
+                          cachedDataType="i4"
+                          cachedName="ShiftID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[ShiftID]" />
+                        <inputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].Columns[DoctorID]"
+                          cachedDataType="i4"
+                          cachedName="DoctorID"
+                          externalMetadataColumnId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorID]"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output].Columns[DoctorID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorsShiftID]"
+                          dataType="i4"
+                          name="DoctorsShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftDate]"
+                          dataType="dbTimeStamp"
+                          name="ShiftDate" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClinicID]"
+                          dataType="i4"
+                          name="ClinicID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShiftID]"
+                          dataType="i4"
+                          name="ShiftID" />
+                        <externalMetadataColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input].ExternalColumns[DoctorID]"
+                          dataType="i4"
+                          name="DoctorID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging.Paths[ADO NET Source Output]"
+                  endId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source.Outputs[ADO NET Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PreLoad ETL\Truncate Staging Tables Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3CE792A2-B249-4A1E-B8FC-DB761B0479E1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Staging Tables Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25F260FE-E375-4C95-8716-571A22AC78EF}"
+              SQLTask:SqlStatementSource="truncate table DimShiftsStaging;&#xA;truncate table DimDoctorsStaging;&#xA;truncate table DimClinicsStaging;&#xA;truncate table FactDoctorShiftsStaging;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PreLoad ETL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5B28C984-360A-493F-BC70-B6EEF02413DC}"
+          DTS:From="Package\PreLoad ETL\Truncate Staging Tables Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\PreLoad ETL\Fill DimShiftsStaging" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PreLoad ETL.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1CD31065-3D4E-4616-8567-97795340576B}"
+          DTS:From="Package\PreLoad ETL\Fill DimShiftsStaging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\PreLoad ETL\Fill DimClinicsStaging" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PreLoad ETL.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{C94F03B4-16D5-40C9-ADDA-9CF1F1AC8EF2}"
+          DTS:From="Package\PreLoad ETL\Fill DimClinicsStaging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\PreLoad ETL\Fill DimDoctorsStaging" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PreLoad ETL.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{A91FC29D-35DC-41D4-893B-2D3141722DF2}"
+          DTS:From="Package\PreLoad ETL\Fill DimDoctorsStaging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\PreLoad ETL\Fill FactDoctorShiftsStaging" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{626885D7-0A12-4667-9EB1-2DE1EFDD9657}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::varDatabaseCount]&gt;0"
+      DTS:From="Package\Check Remote Server"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\PreLoad ETL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2558BD18-5EAD-4F73-A39A-4CF713F53AAF}"
+      DTS:Expression="@[User::varDatabaseCount]&gt;0"
+      DTS:From="Package\PreLoad ETL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fill Dim Tables ETL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9FFF6C63-BF5D-460D-B869-E671F9A77055}"
+      DTS:From="Package\Fill Dim Tables ETL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Fill Fact Tables ETL" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Check Remote Server\Check DW DataBase"
+          TopLeft="88.8333343267443,42.8574545573607" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Check Remote Server\Create DW"
+          TopLeft="88.8333343267443,128.039475283299" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Check Remote Server\Create DW ETL Views"
+          TopLeft="88.8333343267443,213.221496009237" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Check Remote Server\Create DW Fill Procedures"
+          TopLeft="88.8333343267443,298.403516735176" />
+        <EdgeLayout
+          Id="Package\Check Remote Server.PrecedenceConstraints[Constraint 4]"
+          TopLeft="194.166667660078,85.5241212240274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5153540592716"
+              Start="0,0"
+              End="0,35.0153540592716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0153540592716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.50767702963581,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Check Remote Server.PrecedenceConstraints[Constraint 5]"
+          TopLeft="194.166667660078,170.706141949966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5153540592713"
+              Start="0,0"
+              End="0,35.0153540592713">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0153540592713" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Check Remote Server.PrecedenceConstraints[Constraint 6]"
+          TopLeft="194.166667660078,255.888162675904">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5153540592724"
+              Start="0,0"
+              End="0,35.0153540592724">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0153540592724" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Check Remote Server\Check DW DataBase Again"
+          TopLeft="88.8333343267443,383.736849742252" />
+        <EdgeLayout
+          Id="Package\Check Remote Server.PrecedenceConstraints[Constraint]"
+          TopLeft="194.166667660078,341.070183401843">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6666663404097"
+              Start="0,0"
+              End="0,35.1666663404097">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1666663404097" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="395.333333333334,498.666666666667"
+          Size="395.333333333334,542"
+          Id="Package\Check Remote Server"
+          TopLeft="93.8888884087413,205.68129046193" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimClinics Execute SQL Task"
+          TopLeft="82.0416563941789,88.2105298960309" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimDates Execute SQL Task"
+          TopLeft="80.1249836863335,435.789483235814" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimDoctors Execute SQL Task"
+          TopLeft="82.0416563941789,157.726320563988" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimPatients Execute SQL Task"
+          TopLeft="84.1249896964679,296.757901899901" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimProcedures Execute SQL Task"
+          TopLeft="84.1249896964679,366.273692567857" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\DimShifts Execute SQL Task"
+          TopLeft="85.1666563476126,227.242111231944" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\Fill Dim Tables ETL\Insert Dummy Rows"
+          TopLeft="81.166650337478,20.7368419120852" />
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="208.708323060845,130.877196562698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.84912400129"
+              Start="0,0"
+              End="0,19.34912400129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.34912400129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 1]"
+          TopLeft="210.270823037562,200.392987230654">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.84912400129"
+              Start="0,0"
+              End="0,19.34912400129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.34912400129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 2]"
+          TopLeft="211.312489688707,269.908777898611">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.84912400129"
+              Start="0,0"
+              End="0,19.34912400129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.34912400129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 3]"
+          TopLeft="210.791656363134,339.424568566567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.84912400129"
+              Start="0,0"
+              End="0,19.34912400129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.34912400129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 4]"
+          TopLeft="208.791653358067,408.940359234524">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.84912400129"
+              Start="0,0"
+              End="0,19.34912400129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.34912400129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Dim Tables ETL.PrecedenceConstraints[Constraint 5]"
+          TopLeft="206.937486699162,63.4035085787519">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.8070213172791"
+              Start="0,0"
+              End="0,17.3070213172791">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3070213172791" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="449.333333333334,518.666666666667"
+          Size="449.333333333334,562"
+          Id="Package\Fill Dim Tables ETL"
+          TopLeft="677.847212990743,743.643287044079" />
+        <NodeLayout
+          Size="264,42.6666666666667"
+          Id="Package\Fill Fact Tables ETL\FactDoctorShifts Execute SQL Task"
+          TopLeft="65.2083332557231,115.912279821719" />
+        <NodeLayout
+          Size="264,42.6666666666667"
+          Id="Package\Fill Fact Tables ETL\FactVisits Execute SQL Task"
+          TopLeft="65.2083332557231,36.0526311281975" />
+        <EdgeLayout
+          Id="Package\Fill Fact Tables ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="197.208333255723,78.7192977948641">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.1929820268549"
+              Start="0,0"
+              End="0,29.6929820268549">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6929820268549" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="398,201.333333333334"
+          Size="398,244"
+          Id="Package\Fill Fact Tables ETL"
+          TopLeft="94.7916652541616,907.719315331179" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimClinicsStaging"
+          TopLeft="97.3333267271521,164.43860138079" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimDoctorsStaging"
+          TopLeft="97.3333267271521,235.587724623533" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimShiftsStaging"
+          TopLeft="97.3333267271521,93.289478138048" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill FactDoctorShiftsStaging"
+          TopLeft="97.3333267271521,306.736847866275" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\PreLoad ETL\Truncate Staging Tables Execute SQL Task"
+          TopLeft="97.3333267271521,22.1403548953056" />
+        <EdgeLayout
+          Id="Package\PreLoad ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="221.333326727152,64.8070215619723">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.4824565760757"
+              Start="0,0"
+              End="0,20.9824565760757">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9824565760757" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PreLoad ETL.PrecedenceConstraints[Constraint 1]"
+          TopLeft="221.333326727152,135.956144804715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.4824565760754"
+              Start="0,0"
+              End="0,20.9824565760754">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9824565760754" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PreLoad ETL.PrecedenceConstraints[Constraint 2]"
+          TopLeft="221.333326727152,207.105268047457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.4824565760763"
+              Start="0,0"
+              End="0,20.9824565760763">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9824565760763" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PreLoad ETL.PrecedenceConstraints[Constraint 3]"
+          TopLeft="221.333326727152,278.2543912902">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.4824565760754"
+              Start="0,0"
+              End="0,20.9824565760754">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9824565760754" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="459.333333333334,396"
+          Size="459.333333333334,438.666666666667"
+          Id="Package\PreLoad ETL"
+          TopLeft="674.652767724669,222.014623795263" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="489.222221742075,476.68129046193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="185.430545982594,-35.3333333333336"
+              Start="0,0"
+              End="177.930545982594,-35.3333333333336">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.7152729912972,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.7152729912972,0"
+                    Point2="92.7152729912972,0"
+                    Point3="92.7152729912972,-4" />
+                  <mssgle:LineSegment
+                    End="92.7152729912972,-31.3333333333336" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.7152729912972,-31.3333333333336"
+                    Point2="92.7152729912972,-35.3333333333336"
+                    Point3="96.7152729912972,-35.3333333333336" />
+                  <mssgle:LineSegment
+                    End="177.930545982594,-35.3333333333336" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="84.7152729912972,1,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="903.416657024373,660.68129046193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.9619965821499"
+              Start="0,0"
+              End="0,75.4619965821499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.4619965821499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="677.847212990743,1027.18130118763">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-185.055547736582,0"
+              Start="0,0"
+              End="-177.555547736582,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-177.555547736582,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PreLoad ETL\Fill DimClinicsStaging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination"
+          TopLeft="226,202.666666666667" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source"
+          TopLeft="226,106" />
+        <EdgeLayout
+          Id="Package\PreLoad ETL\Fill DimClinicsStaging.Paths[ADO NET Source Output]"
+          TopLeft="337.333333333333,148.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.0000000000003"
+              Start="0,0"
+              End="0,46.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimClinicsStaging\Clinics Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimClinicsStaging\DimClinicsStaging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PreLoad ETL\Fill DimDoctorsStaging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="228,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination"
+          TopLeft="148,200" />
+        <NodeLayout
+          Size="228,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source"
+          TopLeft="148,91.3333333333333" />
+        <EdgeLayout
+          Id="Package\PreLoad ETL\Fill DimDoctorsStaging.Paths[ADO NET Source Output]"
+          TopLeft="262,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimDoctorsStaging\DimDoctorsStaging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimDoctorsStaging\Doctors Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PreLoad ETL\Fill DimShiftsStaging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source"
+          TopLeft="101.666665151715,58.3859660112517" />
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination"
+          TopLeft="101.666665151715,136.842107838871" />
+        <EdgeLayout
+          Id="Package\PreLoad ETL\Fill DimShiftsStaging.Paths[ADO NET Source Output]"
+          TopLeft="210.999998485048,101.052632677918">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.7894751609526"
+              Start="0,0"
+              End="0,28.2894751609526">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2894751609526" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimShiftsStaging\DimShiftsStaging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill DimShiftsStaging\Shifts Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PreLoad ETL\Fill FactDoctorShiftsStaging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source"
+          TopLeft="148,91.3333333333333" />
+        <NodeLayout
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination"
+          TopLeft="148,200" />
+        <EdgeLayout
+          Id="Package\PreLoad ETL\Fill FactDoctorShiftsStaging.Paths[ADO NET Source Output]"
+          TopLeft="273.333333333333,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\DoctorShifts Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PreLoad ETL\Fill FactDoctorShiftsStaging\FactDoctorShiftsStaging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

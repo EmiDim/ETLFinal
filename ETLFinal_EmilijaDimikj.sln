@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BI ETL Final SSIS", "BI ETL Final SSIS\BI ETL Final SSIS.dtproj", "{BA177A90-663E-4EB7-94EC-54774C4DC045}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataFiles", "DataFiles", "{494560DF-AB51-42F0-AC75-7C299FD49631}"
+	ProjectSection(SolutionItems) = preProject
+		DataFiles\PatientsLog.txt = DataFiles\PatientsLog.txt
+		DataFiles\VisitsLog.txt = DataFiles\VisitsLog.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{859B5BF4-1736-41BB-B8A3-2B0CC0719858}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\1-The ETL Final.doc = Documents\1-The ETL Final.doc
+		Documents\2-BISolutionWorksheets.xlsx = Documents\2-BISolutionWorksheets.xlsx
+		Documents\3-ETL_Final_TechnicalOverview.docx = Documents\3-ETL_Final_TechnicalOverview.docx
+		Documents\4-LessonsLearned.docx = Documents\4-LessonsLearned.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceDatabases", "SourceDatabases", "{79D45522-023C-411C-BF17-E42442B8977C}"
+	ProjectSection(SolutionItems) = preProject
+		SourceDatabases\DoctorsSchedules.mdf = SourceDatabases\DoctorsSchedules.mdf
+		SourceDatabases\Patients.mdf = SourceDatabases\Patients.mdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{D9097C9A-D4BF-497E-AF77-D58400906D67}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\5-Create DWClinicReportData.sql = SQLScripts\5-Create DWClinicReportData.sql
+		SQLScripts\6-CreateViews DW.sql = SQLScripts\6-CreateViews DW.sql
+		SQLScripts\7-Create LoadingProcedures DW.sql = SQLScripts\7-Create LoadingProcedures DW.sql
+		SQLScripts\8-DimTab Dummy Rows.sql = SQLScripts\8-DimTab Dummy Rows.sql
+		SQLScripts\CreateCollViews.sql = SQLScripts\CreateCollViews.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bellevue", "Bellevue", "{3C7B3FC7-0F45-4617-84F7-F76FBDC363E1}"
+	ProjectSection(SolutionItems) = preProject
+		DataFiles\Bellevue\20100102NewPatients.csv = DataFiles\Bellevue\20100102NewPatients.csv
+		DataFiles\Bellevue\20100102Visits.csv = DataFiles\Bellevue\20100102Visits.csv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kirkland", "Kirkland", "{8A8B4FB3-4C21-4386-A7EE-E9CAFCFA97C0}"
+	ProjectSection(SolutionItems) = preProject
+		DataFiles\Kirkland\20100102NewPatients.csv = DataFiles\Kirkland\20100102NewPatients.csv
+		DataFiles\Kirkland\20100102Visits.csv = DataFiles\Kirkland\20100102Visits.csv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redmond", "Redmond", "{91AD89DE-BB1B-42BD-82A7-0A882DCFD6FD}"
+	ProjectSection(SolutionItems) = preProject
+		DataFiles\Redmond\20100102NewPatients.csv = DataFiles\Redmond\20100102NewPatients.csv
+		DataFiles\Redmond\20100102Visits.csv = DataFiles\Redmond\20100102Visits.csv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PythonScripts", "PythonScripts", "{EF44FC30-3769-41D4-911E-F36B5056290C}"
+	ProjectSection(SolutionItems) = preProject
+		PythonScripts\1-ETLtoMongoScript.py = PythonScripts\1-ETLtoMongoScript.py
+		PythonScripts\2-ReportScript.py = PythonScripts\2-ReportScript.py
+		PythonScripts\3-ExportReportData.py = PythonScripts\3-ExportReportData.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{275AD75B-B445-4CF2-B03A-DDE5D22584F8}"
+	ProjectSection(SolutionItems) = preProject
+		Reports\ETLReport.html = Reports\ETLReport.html
+		Reports\Reports.xlsx = Reports\Reports.xlsx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Debug|Any CPU.ActiveCfg = Development
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Debug|Any CPU.Build.0 = Development
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Development|Any CPU.ActiveCfg = Development
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Development|Any CPU.Build.0 = Development
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Release|Any CPU.ActiveCfg = Development
+		{BA177A90-663E-4EB7-94EC-54774C4DC045}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C7B3FC7-0F45-4617-84F7-F76FBDC363E1} = {494560DF-AB51-42F0-AC75-7C299FD49631}
+		{8A8B4FB3-4C21-4386-A7EE-E9CAFCFA97C0} = {494560DF-AB51-42F0-AC75-7C299FD49631}
+		{91AD89DE-BB1B-42BD-82A7-0A882DCFD6FD} = {494560DF-AB51-42F0-AC75-7C299FD49631}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C792E21E-70D9-47AC-A96F-2CC360A61FAD}
+	EndGlobalSection
+EndGlobal
